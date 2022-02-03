@@ -32,7 +32,7 @@ def main():
         
        
         # define the threshold slider with 100 steps
-        slider = st.slider("Threshold", min_value = float(tmin), max_value = float(tmax), value = float(2 * tmin), step=float((tmax-tmin)/10)0)   
+        slider = st.slider("Threshold", min_value = float(tmin), max_value = float(tmax), value = float(2 * tmin), step=float((tmax-tmin)/10))   
         
         # add a column for the threshold line with the slider value into the dataframe for plotting
         k0 = keys[0]
