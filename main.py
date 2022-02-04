@@ -61,9 +61,10 @@ def main():
 
             if idx.size == 0: idx = max(xs)
             else: idx = idx[0]
+
             # and we compute the averaged x,y coordinates of the intersections from both y_data and the slider line
-            x_value = (xs[idx[i]]+xs[idx[i]+1])/2.
-            y_value = (y_data[idx[i]]+y_data[idx[i]+1])/2.
+            x_value= (xs[idx]+xs[idx+1])/2.
+            # y_value = (y_data[idx]+y_data[idx+1])/2.
             intersections_x.append(x_value)
     
         # now we compile the results
