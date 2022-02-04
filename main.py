@@ -59,12 +59,13 @@ def main():
             # now we search for intersecting points of y_data and y_line
             idx=np.argwhere(np.diff(np.sign(y_data - y_line )) != 0).reshape(-1)
 
+            if idx.size == 0: idx = max(xs)
+            else: idx = idx[0]
             # and we compute the averaged x,y coordinates of the intersections from both y_data and the slider line
-            for i in range(len(idx)):
-                x_value = (xs[idx[i]]+xs[idx[i]+1])/2.
-                y_value = (y_data[idx[i]]+y_data[idx[i]+1])/2.
-                intersections_x.append(x_value)
-        
+            x_value = (xs[idx[i]]+xs[idx[i]+1])/2.
+            y_value = (y_data[idx[i]]+y_data[idx[i]+1])/2.
+            intersections_x.append(x_value)
+    
         # now we compile the results
         results = {"Sample" : keys, "CT" : intersections_x}
         results = pd.DataFrame(results)
